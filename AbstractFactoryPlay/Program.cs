@@ -6,7 +6,7 @@ internal class Program
 {
     static SquadCreationEngine Init()
     {
-        Console.Write("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi\n3 - Reality\n\nYour theme: ");
+        Console.Write("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi\n3 - Reality\n4 - Japan\n\nYour theme: ");
 
         bool isIntValid = int.TryParse(Console.ReadLine(), out int gameThemeNumber);
         Console.WriteLine();
@@ -23,6 +23,7 @@ internal class Program
             GameTheme.Fantasy => new(new KnightUnitCreator()),
             GameTheme.SciFi => new(new CyberNinjaUnitCreator()),
             GameTheme.Reality => new(new InfantryUnitCreator()),
+            GameTheme.Japan => new(new SamuraiUnitCreator()),
             _ => throw new ArgumentOutOfRangeException("Entered value is not an option."),
         };
     }
