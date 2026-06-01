@@ -6,7 +6,7 @@ internal class Program
 {
     static void Main()
     {
-        Console.WriteLine("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi");
+        Console.WriteLine("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi\n3 - Reality");
 
         int gameThemeNumber;
 
@@ -29,6 +29,11 @@ internal class Program
             case GameTheme.SciFi:
                 CyberNinjaUnit cyberNinja = new();
                 cyberNinja.Attack();
+                break;
+
+            case GameTheme.Reality:
+                InfantryUnit reality = new();
+                reality.Attack();
                 break;
             
             default:

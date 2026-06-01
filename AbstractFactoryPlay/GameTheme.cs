@@ -3,5 +3,6 @@
 public enum GameTheme
 {
     Fantasy = 1,
-    SciFi = 2
+    SciFi = 2,
+    Reality = 3
 }
