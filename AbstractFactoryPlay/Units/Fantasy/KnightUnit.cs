@@ -1,6 +1,6 @@
-﻿namespace AbstractFactoryPlay.Units;
+﻿namespace AbstractFactoryPlay.Units.Fantasy;
 
-public class KnightUnit : IUnit
+public class KnightUnit : IMeleeUnit
 {
     public void Attack()
     {

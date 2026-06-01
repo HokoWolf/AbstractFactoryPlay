@@ -1,4 +1,7 @@
-﻿using AbstractFactoryPlay.UnitCreators;
+﻿using AbstractFactoryPlay.Units.Fantasy;
+using AbstractFactoryPlay.Units.Japan;
+using AbstractFactoryPlay.Units.Reality;
+using AbstractFactoryPlay.Units.SciFi;
 
 namespace AbstractFactoryPlay;
 
@@ -20,10 +23,10 @@ internal class Program
 
         return gameTheme switch
         {
-            GameTheme.Fantasy => new(new KnightUnitCreator()),
-            GameTheme.SciFi => new(new CyberNinjaUnitCreator()),
-            GameTheme.Reality => new(new InfantryUnitCreator()),
-            GameTheme.Japan => new(new SamuraiUnitCreator()),
+            GameTheme.Fantasy => new(new KnightUnitCreator(), new ArcherUnitCreator()),
+            GameTheme.SciFi => new(new CyberNinjaUnitCreator(), new LaserTrooperUnitCreator()),
+            GameTheme.Reality => new(new InfantryUnitCreator(), new ArtillaryUnitCreator()),
+            GameTheme.Japan => new(new SamuraiUnitCreator(), new YumihikiUnitCreator()),
             _ => throw new ArgumentOutOfRangeException("Entered value is not an option."),
         };
     }

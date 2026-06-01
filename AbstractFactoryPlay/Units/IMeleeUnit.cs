@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactoryPlay.Units;
 
-public interface IUnit
+public interface IMeleeUnit
 {
     void Attack();
 }

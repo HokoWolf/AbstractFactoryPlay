@@ -1,6 +1,6 @@
-﻿namespace AbstractFactoryPlay.Units;
+﻿namespace AbstractFactoryPlay.Units.Reality;
 
-public class InfantryUnit : IUnit
+public class InfantryUnit : IMeleeUnit
 {
     public void Attack()
     {

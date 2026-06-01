@@ -1,6 +1,6 @@
-﻿namespace AbstractFactoryPlay.Units;
+﻿namespace AbstractFactoryPlay.Units.SciFi;
 
-public class CyberNinjaUnit : IUnit
+public class CyberNinjaUnit : IMeleeUnit
 {
     public void Attack()
     {

@@ -1,11 +1,12 @@
-﻿using AbstractFactoryPlay.UnitCreators;
+﻿using AbstractFactoryPlay.Units;
 
 namespace AbstractFactoryPlay;
 
-public class SquadCreationEngine(UnitCreator unitCreator)
+public class SquadCreationEngine(MeleeUnitCreator meleeUnitCreator, RangedUnitCreator rangedUnitCreator)
 {
     public void Simulate()
     {
-        unitCreator.CreateUnit().Attack();
+        meleeUnitCreator.CreateUnit().Attack();
+        rangedUnitCreator.CreateUnit().Shoot();
     }
 }

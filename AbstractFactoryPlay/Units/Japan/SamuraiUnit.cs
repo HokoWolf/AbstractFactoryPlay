@@ -1,6 +1,6 @@
-﻿namespace AbstractFactoryPlay.Units;
+﻿namespace AbstractFactoryPlay.Units.Japan;
 
-public class SamuraiUnit : IUnit
+public class SamuraiUnit : IMeleeUnit
 {
     public void Attack()
     {
