@@ -1,16 +1,15 @@
-﻿using AbstractFactoryPlay.Units;
+﻿using AbstractFactoryPlay.UnitCreators;
 
 namespace AbstractFactoryPlay;
 
 internal class Program
 {
-    static void Main()
+    static SquadCreationEngine Init()
     {
-        Console.WriteLine("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi\n3 - Reality");
+        Console.Write("Choose your game theme:\n1 - Fantasy\n2 - Sci-Fi\n3 - Reality\n\nYour theme: ");
 
-        int gameThemeNumber;
-
-        bool isIntValid = int.TryParse(Console.ReadLine(), out gameThemeNumber);
+        bool isIntValid = int.TryParse(Console.ReadLine(), out int gameThemeNumber);
+        Console.WriteLine();
 
         if (!isIntValid)
         {
@@ -19,25 +18,17 @@ internal class Program
 
         GameTheme gameTheme = (GameTheme)gameThemeNumber;
 
-        switch (gameTheme)
+        return gameTheme switch
         {
-            case GameTheme.Fantasy:
-                KnightUnit knight = new();
-                knight.Attack();
-                break;
-            
-            case GameTheme.SciFi:
-                CyberNinjaUnit cyberNinja = new();
-                cyberNinja.Attack();
-                break;
+            GameTheme.Fantasy => new(new KnightUnitCreator()),
+            GameTheme.SciFi => new(new CyberNinjaUnitCreator()),
+            GameTheme.Reality => new(new InfantryUnitCreator()),
+            _ => throw new ArgumentOutOfRangeException("Entered value is not an option."),
+        };
+    }
 
-            case GameTheme.Reality:
-                InfantryUnit reality = new();
-                reality.Attack();
-                break;
-            
-            default:
-                throw new ArgumentOutOfRangeException("Entered value is not an option."); 
-        }
+    static void Main()
+    {
+        Init().Simulate();
     }
 }

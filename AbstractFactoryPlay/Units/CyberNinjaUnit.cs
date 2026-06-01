@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactoryPlay.Units;
 
-public class CyberNinjaUnit
+public class CyberNinjaUnit : IUnit
 {
     public void Attack()
     {

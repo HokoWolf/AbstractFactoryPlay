@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactoryPlay.Units;
 
-internal class InfantryUnit
+public class InfantryUnit : IUnit
 {
     public void Attack()
     {
