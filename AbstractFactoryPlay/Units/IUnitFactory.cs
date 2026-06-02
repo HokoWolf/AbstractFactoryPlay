@@ -4,4 +4,5 @@ public interface IUnitFactory
 {
     IMeleeUnit CreateMeleeUnit();
     IRangedUnit CreateRangedUnit();
+    IMountUnit CreateMountUnit();
 }

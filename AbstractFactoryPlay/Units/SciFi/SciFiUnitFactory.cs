@@ -11,4 +11,9 @@ public class SciFiUnitFactory : IUnitFactory
     {
         return new LaserTrooperUnit();
     }
+
+    public IMountUnit CreateMountUnit()
+    {
+        return new HoverBikeUnit();
+    }
 }

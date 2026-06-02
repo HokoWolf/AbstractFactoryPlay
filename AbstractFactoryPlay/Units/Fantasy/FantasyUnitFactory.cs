@@ -11,4 +11,9 @@ public class FantasyUnitFactory : IUnitFactory
     {
         return new ArcherUnit();
     }
+
+    public IMountUnit CreateMountUnit()
+    {
+        return new WarhorseUnit();
+    }
 }

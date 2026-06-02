@@ -11,4 +11,9 @@ public class RealityUnitFactory : IUnitFactory
     {
         return new ArtillaryUnit();
     }
+
+    public IMountUnit CreateMountUnit()
+    {
+        return new ArmoredTrackUnit();
+    }
 }

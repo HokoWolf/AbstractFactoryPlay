@@ -8,5 +8,6 @@ public class SquadCreationEngine(IUnitFactory unitFactory)
     {
         unitFactory.CreateMeleeUnit().Attack();
         unitFactory.CreateRangedUnit().Shoot();
+        unitFactory.CreateMountUnit().Move();
     }
 }

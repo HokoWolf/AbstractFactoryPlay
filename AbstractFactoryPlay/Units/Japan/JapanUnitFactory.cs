@@ -11,4 +11,9 @@ public class JapanUnitFactory : IUnitFactory
     {
         return new YumihikiUnit();
     }
+
+    public IMountUnit CreateMountUnit()
+    {
+        return new WarmuleUnit();
+    }
 }
