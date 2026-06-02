@@ -23,10 +23,10 @@ internal class Program
 
         return gameTheme switch
         {
-            GameTheme.Fantasy => new(new KnightUnitCreator(), new ArcherUnitCreator()),
-            GameTheme.SciFi => new(new CyberNinjaUnitCreator(), new LaserTrooperUnitCreator()),
-            GameTheme.Reality => new(new InfantryUnitCreator(), new ArtillaryUnitCreator()),
-            GameTheme.Japan => new(new SamuraiUnitCreator(), new YumihikiUnitCreator()),
+            GameTheme.Fantasy => new(new FantasyUnitFactory()),
+            GameTheme.SciFi => new(new SciFiUnitFactory()),
+            GameTheme.Reality => new(new RealityUnitFactory()),
+            GameTheme.Japan => new(new JapanUnitFactory()),
             _ => throw new ArgumentOutOfRangeException("Entered value is not an option."),
         };
     }
